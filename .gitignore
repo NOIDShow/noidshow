@@ -1,0 +1,8 @@
+dist/
+node_modules/
+.wrangler/
+.claude/
+.dev.vars
+# subscriber imports contain personal data
+db/import-subscribers.sql
+*.csv

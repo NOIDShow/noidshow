@@ -1,0 +1,15 @@
+{
+  "name": "noidshow-site",
+  "private": true,
+  "type": "module",
+  "description": "NO ID podcast website, a static site for Cloudflare Pages",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "dev": "node scripts/build.mjs && npx wrangler@3 pages dev dist --port 8788",
+    "preview": "node scripts/serve.mjs",
+    "import-subscribers": "node scripts/import-subscribers.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

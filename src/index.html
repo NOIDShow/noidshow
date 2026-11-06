@@ -1,0 +1,196 @@
+<!--page title="NO ID — Idaho's mainstream media, deconstructed | A North Idaho podcast" path="/" nav="home"-->
+{{HEAD}}
+<body>
+{{HEADER}}
+<main id="main">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="wrap">
+      <p class="kicker"><span class="onair"><i></i>Live from North Idaho</span><span class="sep"></span><span>New episodes every Thursday</span><span class="sep"></span><span>No ads, ever</span></p>
+      <h1 class="h-display">
+        <span class="line">Idaho's news,</span>
+        <span class="line red">decon&shy;structed.</span>
+      </h1>
+    </div>
+    <div class="wrap hero__grid">
+      <div>
+        <p class="hero__lede"><strong>NO ID</strong> is an independent, listener-supported podcast. <strong>Paul Banducci &amp; Scott Moskowitz</strong> take apart the mainstream media narratives on politics, government and local news, and dig into the stories behind the stories shaping the Inland Northwest.</p>
+        <div class="hero__ctas">
+          <button class="btn btn--red btn-play" type="button" {{LATEST_PLAY_ATTRS}}>{{icon:play}}{{icon:pause}}<span>Play the latest episode</span></button>
+          <a class="btn btn--ghost" href="#support">{{icon:heart}}<span>Support the show</span></a>
+        </div>
+        <div class="hero__listen">
+          <span>Listen on</span>
+          <div class="chips">{{LISTEN_CHIPS}}</div>
+        </div>
+      </div>
+      {{STACK}}
+    </div>
+  </section>
+
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker__track">
+      <span>No ads. Ever.</span><span>Value-4-Value</span><span>Live from North Idaho</span><span>Narratives deconstructed</span><span>New every Thursday</span><span>Producer-supported</span>
+      <span>No ads. Ever.</span><span>Value-4-Value</span><span>Live from North Idaho</span><span>Narratives deconstructed</span><span>New every Thursday</span><span>Producer-supported</span>
+    </div>
+  </div>
+
+  <!-- ============ LATEST ============ -->
+  <section class="section" id="latest" aria-labelledby="latest-h">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <p class="eyebrow">Latest episode</p>
+          <h2 class="h-display h-section" id="latest-h">Fresh off <em>the mic.</em></h2>
+        </div>
+      </div>
+      <div class="reveal" data-slot="latest">{{LATEST}}</div>
+    </div>
+  </section>
+
+  <!-- ============ RECENT ============ -->
+  <section class="section section--alt" id="episodes" aria-labelledby="recent-h">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <p class="eyebrow">The archive</p>
+          <h2 class="h-display h-section" id="recent-h">Recent <em>episodes.</em></h2>
+        </div>
+        <a class="btn btn--ghost" href="/episodes/">All <span data-slot="count">{{EP_COUNT}}</span> episodes {{icon:arrow}}</a>
+      </div>
+      <div class="ep-grid" data-slot="recent">{{RECENT}}</div>
+    </div>
+  </section>
+
+  <!-- ============ LISTEN ============ -->
+  <section class="section section--paper" id="listen" aria-labelledby="listen-h">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <p class="eyebrow">Subscribe</p>
+          <h2 class="h-display h-section" id="listen-h">Listen <em>anywhere.</em></h2>
+          <p class="lede">Follow NO ID in your favorite podcast app and every Thursday's episode shows up automatically.</p>
+        </div>
+      </div>
+      <div class="platforms reveal">{{PLATFORMS}}</div>
+      <p class="listen-note">Using a Podcasting 2.0 app like Fountain, Podverse or Castamatic? Paste our RSS feed in and you're set.</p>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="section" id="about" aria-labelledby="about-h">
+    <div class="wrap">
+      <div class="about">
+        <div class="reveal">
+          <p class="eyebrow">About the show</p>
+          <h2 class="h-display about__big" id="about-h"><span>No ads.</span><span>No spin.</span><span>No ID.</span></h2>
+        </div>
+        <div class="about__copy reveal">
+          <p>NO ID is Idaho's independent, producer-supported podcast that deconstructs the mainstream media.</p>
+          <p>Every week, Paul and Scott go through the headlines, press releases and local TV packages coming out of Boise, Coeur d'Alene, Post Falls and Spokane. They ask who's framing the story, what got left out, and who benefits.</p>
+          <p>It's hyper-local, often funny, and never sponsored. The show runs entirely on support from listeners like you.</p>
+          <ul class="topics">
+            <li>Idaho politics</li><li>Local government</li><li>Local media</li><li>Kootenai County</li><li>The Legislature</li><li>Civil liberties</li>
+          </ul>
+        </div>
+      </div>
+      <div class="hosts">
+        <div class="host reveal">
+          <img src="/assets/img/paul.webp" width="280" height="280" alt="Paul Banducci" loading="lazy">
+          <div><h3>Paul Banducci</h3><p>Co-host</p></div>
+        </div>
+        <div class="host reveal">
+          <img src="/assets/img/scott.webp" width="280" height="280" alt="Scott Moskowitz" loading="lazy">
+          <div><h3>Scott Moskowitz</h3><p>Co-host</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SUPPORT / V4V ============ -->
+  <section class="section section--alt v4v" id="support" aria-labelledby="support-h">
+    <div class="wrap">
+      <div class="v4v__grid">
+        <div class="v4v__copy reveal">
+          <p class="eyebrow">Value-4-Value</p>
+          <h2 class="h-display h-section" id="support-h">Keep NO&nbsp;ID <em>on&nbsp;the&nbsp;air.</em></h2>
+          <p class="pull">You will never hear an advertisement on NO&nbsp;ID.</p>
+          <p>We don't sell products or promote random brands. The show runs entirely on support from you, which is known as the <strong>Value-4-Value</strong> model.</p>
+          <p>If you get value from the show, send some back. Pitch in where you can and help spread the word.</p>
+          <div class="ttt"><span>Time</span><span>Talent</span><span>Treasure</span></div>
+        </div>
+        <div class="reveal">
+          <div class="give">{{GIVE}}</div>
+        </div>
+      </div>
+
+      <div class="tiers-head reveal">
+        <h3>Donation inspiration</h3>
+        <p>Not sure what to give? Try a NO ID classic, or come up with your own. Only you can decide what value means to you.</p>
+      </div>
+      <div class="tiers reveal">{{TIERS}}</div>
+
+      <div class="producers reveal" id="producers">
+        <a class="producers__poster" href="/assets/img/producers-poster.webp" target="_blank" rel="noopener" aria-label="View the Honoring Our Producers poster">
+          <img src="/assets/img/producers-poster-sm.webp" width="512" height="768" alt="Honoring Our Producers poster listing NO ID's founding donors" loading="lazy">
+        </a>
+        <div>
+          <h3>Honoring our producers</h3>
+          <p>Producers who support the show get credited on air and in the show notes. Thank you. You make this possible.</p>
+          {{RECENT_PRODUCERS}}
+          <h4>Founding donors</h4>
+          <ul class="names">{{FOUNDERS}}</ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ NEWSLETTER ============ -->
+  <section class="section section--paper" id="newsletter" aria-labelledby="nl-h">
+    <div class="wrap newsletter">
+      <div class="reveal">
+        <p class="eyebrow">The newsletter</p>
+        <h2 class="h-display h-section" id="nl-h">Get the <em>Thursday</em> rundown.</h2>
+        <ul class="nl-perks">
+          <li>One email a week, every Thursday, with the new episode</li>
+          <li>The topics, timestamps and links we covered</li>
+          <li>No spam, and you can unsubscribe in one click</li>
+        </ul>
+      </div>
+      <form class="nl-form reveal" action="/api/subscribe" method="post" data-newsletter>
+        <label class="sr-only" for="nl-email">Email address</label>
+        <div class="nl-row">
+          <input id="nl-email" type="email" name="email" placeholder="you@example.com" autocomplete="email" required>
+          <button class="btn" type="submit">Subscribe</button>
+        </div>
+        <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <p class="nl-status" role="status" aria-live="polite"></p>
+        <p class="nl-fine">We'll only use your email to send the NO ID newsletter.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="section" id="contact" aria-labelledby="contact-h">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <p class="eyebrow">Get in touch</p>
+          <h2 class="h-display h-section" id="contact-h">Shoot us <em>a message.</em></h2>
+          <p class="lede">Send us stories, tips, clips, articles, boots-on-the-ground reports or feedback. We read everything.</p>
+        </div>
+      </div>
+      <div class="contact reveal">
+        <a href="mailto:{{cfg:email}}"><small>Email</small><b>{{cfg:email}}</b><span>Tips, clips and feedback</span></a>
+        <a href="{{cfg:voicemail}}" target="_blank" rel="noopener"><small>Voicemail</small><b>Leave a voicemail</b><span>You might end up on the show</span></a>
+        <a href="https://x.com/thenoidshow" target="_blank" rel="noopener"><small>Social</small><b>@thenoidshow</b><span>X, Instagram, TikTok, YouTube</span></a>
+      </div>
+    </div>
+  </section>
+
+</main>
+{{FOOTER}}
+{{PLAYER}}
+</body>
+</html>

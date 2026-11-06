@@ -1,0 +1,29 @@
+# Rebuilds the site every Thursday afternoon (after the new episode is out), so the
+# pre-rendered HTML that search engines see always lists the latest episode.
+# (Visitors already see new episodes within ~10 minutes via /api/episodes.)
+#
+# Setup (optional, about 2 minutes):
+#   1. Cloudflare → your Pages project → Settings → Builds → Deploy hooks → Add
+#      (name: weekly, branch: main) → copy the URL.
+#   2. GitHub → this repo → Settings → Secrets and variables → Actions → New repository secret
+#      Name: CF_DEPLOY_HOOK   Value: the URL you copied.
+name: Weekly rebuild
+
+on:
+  schedule:
+    - cron: '0 18 * * 4'   # Thursdays 18:00 UTC (10–11am Pacific)
+  workflow_dispatch: {}      # also lets you click "Run workflow" by hand
+
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Cloudflare Pages build
+        env:
+          HOOK: ${{ secrets.CF_DEPLOY_HOOK }}
+        run: |
+          if [ -z "$HOOK" ]; then
+            echo "CF_DEPLOY_HOOK secret not set, skipping. See the comments at the top of this file."
+            exit 0
+          fi
+          curl -fsS -X POST "$HOOK" > /dev/null && echo "Rebuild triggered."

@@ -1,0 +1,27 @@
+<!--page title="All Episodes | NO ID, a North Idaho podcast" path="/episodes/" nav="episodes" description="Every episode of NO ID, with show notes, timestamps and transcripts. Paul Banducci & Scott Moskowitz deconstruct Idaho's mainstream media narratives."-->
+{{HEAD}}
+<body>
+{{HEADER}}
+<main id="main">
+  <section class="page-hero">
+    <div class="wrap">
+      <p class="eyebrow">The archive · <span data-slot="count">{{EP_COUNT}}</span> episodes</p>
+      <h1 class="h-display">Every <em>episode.</em></h1>
+      <p class="lede" style="margin-top:22px">Search the whole archive by topic, person or place. Tap a timestamp to jump straight to that segment.</p>
+    </div>
+  </section>
+  <div class="toolbar">
+    <div class="wrap">
+      <label class="search">{{icon:search}}<span class="sr-only">Search episodes</span><input type="search" placeholder="Search episodes, e.g. Labrador, levy, Coeur d'Alene" data-search-input autocomplete="off"></label>
+      <span class="count" data-search-count>{{EP_COUNT}} episodes</span>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="ep-list" data-slot="list">{{EPISODES_LIST}}</div>
+    <p class="empty" hidden data-search-empty>No episodes match that search. Try another word.</p>
+  </div>
+</main>
+{{FOOTER}}
+{{PLAYER}}
+</body>
+</html>
