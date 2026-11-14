@@ -1,0 +1,16 @@
+{
+  "name": "noidshow",
+  "pages_build_output_dir": "dist",
+  "compatibility_date": "2026-11-05",
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "noid",
+      "database_id": "7d1ac8f1-d014-482d-b333-4cb2b630ba4d"
+    }
+  ],
+  "vars": {
+    "NEWSLETTER_PROVIDER": "sender",
+    "NEWSLETTER_LIST_ID": "enJoAW"
+  }
+}

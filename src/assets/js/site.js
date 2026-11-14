@@ -264,7 +264,7 @@ if (latestSlot || list) {
   const idle = window.requestIdleCallback || ((fn) => setTimeout(fn, 1200));
   idle(async () => {
     try {
-      const res = await fetch(`/api/episodes?limit=${list ? 0 : 7}`, { headers: { accept: 'application/json' } });
+      const res = await fetch(`/api/episodes?limit=${list ? 0 : 4}`, { headers: { accept: 'application/json' } });
       if (!res.ok) return;
       const { episodes, count } = await res.json();
       if (!episodes?.length || episodes[0].id === shownId) return;
@@ -273,7 +273,7 @@ if (latestSlot || list) {
       if (latestSlot) {
         latestSlot.innerHTML = latestEpisode(latest);
         const recent = $('[data-slot="recent"]');
-        if (recent) recent.innerHTML = episodes.slice(1, 7).map((e) => episodeCard(e)).join('');
+        if (recent) recent.innerHTML = episodes.slice(1, 4).map((e) => episodeCard(e)).join('');
         const heroBtn = $('.hero .btn-play');
         if (heroBtn) {
           const tmp = document.createElement('div');

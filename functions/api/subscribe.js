@@ -1,3 +1,5 @@
+import { syncSender } from '../../lib/sender.js';
+
 // POST /api/subscribe  — newsletter sign-up.
 //
 // Default: store emails in Cloudflare D1. Bind a D1 database to the Pages project
@@ -5,7 +7,7 @@
 //
 // Optional, to hand sign-ups straight to an email-sending service instead, set in
 // Cloudflare Pages → Settings → Variables and Secrets:
-//   NEWSLETTER_PROVIDER = buttondown | kit | mailerlite
+//   NEWSLETTER_PROVIDER = sender | buttondown | kit | mailerlite
 //   NEWSLETTER_API_KEY  = (secret) API key
 //   NEWSLETTER_LIST_ID  = Kit form ID, or MailerLite group ID (optional for MailerLite)
 
@@ -47,6 +49,17 @@ async function subscribe(email, env, request) {
   const provider = (env.NEWSLETTER_PROVIDER || (env.DB ? 'd1' : '')).toLowerCase();
   const key = env.NEWSLETTER_API_KEY;
   const list = env.NEWSLETTER_LIST_ID;
+
+  if (provider === 'sender') {
+    if (!env.DB || !key || !list) throw fail(503);
+    let source = '/';
+    try { source = new URL(request.headers.get('referer') || request.url).pathname; } catch {}
+    await env.DB.prepare(
+      'INSERT INTO subscribers (email, created_at, country, source) VALUES (?1, ?2, ?3, ?4) ON CONFLICT(email) DO NOTHING'
+    ).bind(email, new Date().toISOString(), request.cf?.country || null, source).run();
+    await syncSender(email, key, list);
+    return;
+  }
 
   if (provider === 'buttondown') {
     const res = await fetch('https://api.buttondown.com/v1/subscribers', {

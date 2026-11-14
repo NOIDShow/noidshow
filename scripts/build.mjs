@@ -92,11 +92,12 @@ function header(nav) {
 <header class="site-header">
   <div class="wrap">
     <a class="brand" href="/" aria-label="NO ID home">
-      <img src="/assets/img/wordmark-sm.webp" width="170" height="181" alt="NO ID">
+      <span class="brand__badge"><img src="/assets/img/wordmark-sm.webp" width="170" height="181" alt="NO ID"></span>
       <span>The NO ID Show<br>Live from North Idaho</span>
     </a>
     <nav class="nav" id="nav" aria-label="Main">
       <a href="/episodes/"${cur('episodes')}>Episodes</a>
+      <a href="/live/"${cur('live')}>Live</a>
       <a href="${p}#listen">Listen</a>
       <a href="${p}#about">About</a>
       <a href="${p}#newsletter">Newsletter</a>
@@ -122,7 +123,7 @@ function footer(nav) {
       <p class="footer-mark" aria-label="NO ID">N<i></i><span>ID</span></p>
       <div class="footer-cols">
         <div><h4>Show</h4><ul>
-          <li><a href="/episodes/">Episodes</a></li><li><a href="${p}#about">About</a></li><li><a href="${p}#support">Donate</a></li><li><a href="${p}#newsletter">Newsletter</a></li>
+          <li><a href="/episodes/">Episodes</a></li><li><a href="/live/">Live</a></li><li><a href="${p}#about">About</a></li><li><a href="${p}#support">Donate</a></li><li><a href="${p}#newsletter">Newsletter</a></li>
         </ul></div>
         <div><h4>Listen</h4><ul>${listen.map((l) => `<li><a href="${esc(l.url)}" ${ext}>${esc(l.label)}</a></li>`).join('')}</ul></div>
         <div><h4>Contact</h4><ul>
@@ -196,14 +197,6 @@ const tiers = site.tiers
   .map((t) => `<div class="tier"><div class="amt"><sup>$</sup>${esc(t.amount)}</div><h4>${esc(t.name)}</h4><p>${esc(t.note)}</p></div>`)
   .join('');
 
-const founders = site.foundingDonors.map((n) => `<li>${esc(n)}</li>`).join('');
-
-// Executive producers credited in the last few episodes
-const recentProducers = [...new Set(episodes.slice(0, 4).flatMap((e) => e.producers).filter((n) => !/^anonymous$/i.test(n)))];
-const recentProducersHtml = recentProducers.length
-  ? `<h4>Recent executive producers</h4><ul class="names names--recent">${recentProducers.map((n) => `<li>${esc(n)}</li>`).join('')}</ul>`
-  : '';
-
 // ---------- render ----------
 function render(tpl, file) {
   const metaMatch = tpl.match(/^<!--page([^>]*)-->\s*/);
@@ -218,15 +211,14 @@ function render(tpl, file) {
     STACK: () => stack,
     LATEST: () => latestEpisode(latest),
     LATEST_PLAY_ATTRS: () => playAttrs(latest),
-    RECENT: () => episodes.slice(1, 7).map((e, i) => episodeCard(e, { eager: i < 3 })).join('\n'),
+    RECENT: () => episodes.slice(1, 4).map((e, i) => episodeCard(e, { eager: i < 3 })).join('\n'),
     EPISODES_LIST: () => episodes.map(episodeRow).join('\n'),
     EP_COUNT: () => String(episodes.length),
     LISTEN_CHIPS: () => listenChips,
     PLATFORMS: () => platforms,
     GIVE: () => give,
     TIERS: () => tiers,
-    FOUNDERS: () => founders,
-    RECENT_PRODUCERS: () => recentProducersHtml,
+    LIVE_SCRIPT: () => `<script type="module" src="/assets/js/live.js?v=${ver}"></script>`,
   };
   return tpl.replace(/\{\{([A-Za-z_]+)(?::([^}]+))?\}\}/g, (m, key, arg) => {
     if (key === 'icon') return icon(arg);
