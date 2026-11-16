@@ -72,8 +72,8 @@ ${noindex ? '<meta name="robots" content="noindex">' : `<link rel="canonical" hr
 <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@thenoidshow">
-<link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+<link rel="icon" href="/assets/img/no-id-favicon-final.png" type="image/png">
+<link rel="apple-touch-icon" href="/assets/img/no-id-touch-final.png">
 <link rel="alternate" type="application/rss+xml" title="NO ID podcast feed" href="${site.feed}">
 <link rel="preload" href="/assets/fonts/ultra-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/archivo-latin-wdth-normal.woff2" as="font" type="font/woff2" crossorigin>
@@ -92,7 +92,7 @@ function header(nav) {
 <header class="site-header">
   <div class="wrap">
     <a class="brand" href="/" aria-label="NO ID home">
-      <span class="brand__badge"><img src="/assets/img/wordmark-sm.webp" width="170" height="181" alt="NO ID"></span>
+      <span class="brand__badge"><img src="/assets/img/no-id-circle-final.webp" width="768" height="768" alt="NO ID"></span>
       <span>The NO ID Show<br>Live from North Idaho</span>
     </a>
     <nav class="nav" id="nav" aria-label="Main">
