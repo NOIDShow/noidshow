@@ -174,7 +174,7 @@ svg { fill: currentColor; }
 .hero .kicker .sep { width: 4px; height: 4px; border-radius: 50%; background: var(--dim); }
 .hero h1 { font-size: clamp(44px, 8.7vw, 124px); }
 .hero h1 .line { white-space: nowrap; }
-@media (max-width: 640px) { .hero h1 { font-size: clamp(44px, 15.5vw, 80px); } .hero h1 .line { white-space: normal; } }
+@media (max-width: 640px) { .hero h1 { font-size: clamp(28px, 10.5vw, 64px); } .hero h1 .line { white-space: nowrap; } }
 .hero h1 .line { display: block; }
 .hero h1 .red { color: var(--red); }
 .hero h1 .stroke { color: transparent; -webkit-text-stroke: 2px var(--paper); }
