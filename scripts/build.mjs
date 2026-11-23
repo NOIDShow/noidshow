@@ -81,6 +81,7 @@ ${noindex ? '<meta name="robots" content="noindex">' : `<link rel="canonical" hr
 <link rel="stylesheet" href="/assets/css/site.css?v=${ver}">
 <script>document.documentElement.classList.replace('no-js','js')</script>
 <script type="module" src="/assets/js/site.js?v=${ver}"></script>
+<script type="module" src="/assets/js/live.js?v=${ver}"></script>
 ${ld}
 </head>`;
 }
@@ -97,7 +98,7 @@ function header(nav) {
     </a>
     <nav class="nav" id="nav" aria-label="Main">
       <a href="/episodes/"${cur('episodes')}>Episodes</a>
-      <a href="/live/"${cur('live')}>Live</a>
+      <a class="onair" href="/live/" data-live-nav${cur('live')}>Live<i hidden aria-hidden="true"></i></a>
       <a href="${p}#listen">Listen</a>
       <a href="${p}#about">About</a>
       <a href="${p}#newsletter">Newsletter</a>
@@ -218,7 +219,6 @@ function render(tpl, file) {
     PLATFORMS: () => platforms,
     GIVE: () => give,
     TIERS: () => tiers,
-    LIVE_SCRIPT: () => `<script type="module" src="/assets/js/live.js?v=${ver}"></script>`,
   };
   return tpl.replace(/\{\{([A-Za-z_]+)(?::([^}]+))?\}\}/g, (m, key, arg) => {
     if (key === 'icon') return icon(arg);

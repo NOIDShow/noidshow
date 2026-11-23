@@ -124,6 +124,7 @@ svg { fill: currentColor; }
 /* on-air light */
 .onair { display: inline-flex; align-items: center; gap: 10px; }
 .onair i {
+  flex: none;
   width: 10px; height: 10px; border-radius: 50%; background: var(--red);
   box-shadow: 0 0 0 0 rgba(225, 39, 43, .6), 0 0 14px var(--red);
   animation: pulse 2s infinite;
