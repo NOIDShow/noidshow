@@ -9,7 +9,7 @@ function httpsUrl(value) {
 
 export async function onRequestGet({ env }) {
   const audio = httpsUrl(env.LIVE_AUDIO_URL);
-  if (!audio) return status('offline');
+  if (!audio) return status('unknown');
   const endpoint = httpsUrl(env.LIVE_STATUS_URL);
   if (!endpoint) return status('unknown', audio);
 
