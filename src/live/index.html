@@ -10,24 +10,40 @@
         <p class="eyebrow">The NO ID Show</p>
         <h1 class="h-display h-section">Live from <em>North Idaho.</em></h1>
         <p class="lede">Listen in as Paul Banducci and Scott Moskowitz record NO ID.</p>
-        <p class="live-status" data-live-status role="status">Checking broadcast status…</p>
-        <div class="cstrEmbed" data-type="newStreamPlayer"
-          data-publicToken="acc0a215-d612-4095-8f12-152238459a60"
-          data-channelId="a34c04ef-ad3b-4d0f-9de7-10ec986dc153"
-          data-theme="dark" data-color="e81e4d" data-rendered="false">
-          <a href="https://www.caster.fm">Shoutcast Hosting</a>
-          <a href="https://www.caster.fm">Stream Hosting</a>
-          <a href="https://www.caster.fm">Radio Server Hosting</a>
+        <div class="live-studio__session">
+          <div>
+            <p class="live-status" data-live-status role="status">Checking broadcast status…</p>
+            <div class="cstrEmbed" data-type="newStreamPlayer"
+              data-publicToken="acc0a215-d612-4095-8f12-152238459a60"
+              data-channelId="a34c04ef-ad3b-4d0f-9de7-10ec986dc153"
+              data-theme="dark" data-color="e81e4d" data-rendered="false">
+              <a href="https://www.caster.fm">Shoutcast Hosting</a>
+              <a href="https://www.caster.fm">Stream Hosting</a>
+              <a href="https://www.caster.fm">Radio Server Hosting</a>
+            </div>
+            <audio data-live-audio controls preload="none" aria-label="NO ID live audio" hidden></audio>
+            <p data-live-help hidden></p>
+            <p><a class="btn btn--red" href="/#latest">Listen to the latest episode</a></p>
+            <noscript><p>Enable JavaScript to check the broadcast and load the live player.</p></noscript>
+          </div>
+          <section class="live-chat" aria-labelledby="live-chat-title">
+            <h2 id="live-chat-title">Live Chat</h2>
+            <span style="display: none;" class="minnit-chat-sembed"
+              data-chatname="https://organizations.minnit.chat/623616135369385/c/Main?embed"
+              data-style="width:100%; height:500px; max-height:90vh; border:0; display:block;"
+              data-version="1.56">NO ID Live Chat</span>
+            <p class="live-chat__links">
+              <a href="https://organizations.minnit.chat/623616135369385/c/Main" target="_blank" rel="noopener noreferrer">Open chat in a new tab</a>
+              <a href="https://minnit.chat" target="_blank" rel="noopener noreferrer">Powered by Minnit Chat</a>
+            </p>
+          </section>
         </div>
-        <audio data-live-audio controls preload="none" aria-label="NO ID live audio" hidden></audio>
-        <p data-live-help hidden></p>
-        <p><a class="btn btn--red" href="/#latest">Listen to the latest episode</a></p>
-        <noscript><p>Enable JavaScript to check the broadcast and load the live player.</p></noscript>
       </div>
     </div>
   </div>
 </main>
 {{FOOTER}}
 <script defer src="https://cdn.cloud.caster.fm/widgets/embed.js"></script>
+<script defer src="https://minnit.chat/js/embed.js?c=1793238146"></script>
 </body>
 </html>

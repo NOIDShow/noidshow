@@ -497,6 +497,14 @@ input[type='range']::-moz-range-thumb { width: 14px; height: 14px; border-radius
 /* ---------- live studio ---------- */
 .live-studio { display: grid; grid-template-columns: minmax(100px, 170px) minmax(0, 1fr); align-items: start; gap: clamp(22px, 6vw, 76px); padding: clamp(24px, 5vw, 64px); background: var(--ink-3); border: 1px solid var(--line); border-radius: var(--radius); }
 .live-studio__mark { width: 100%; height: auto; border-radius: 50%; }
+.live-studio__session { display: grid; gap: 24px; }
+.live-chat { min-width: 0; padding: 16px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--ink); }
+.live-chat h2 { margin: 0 0 12px; font-size: 18px; }
+.live-chat iframe { border-radius: 8px; }
+.live-chat__links { display: flex; flex-wrap: wrap; gap: 4px 14px; margin: 10px 0 0; font-size: 12px; color: var(--muted); }
+@media (min-width: 1050px) {
+  .live-studio__session { grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); align-items: start; }
+}
 .live-status { display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border: 1px solid var(--line-2); border-radius: 99px; font: 12px var(--mono); text-transform: uppercase; letter-spacing: .08em; }
 .live-status::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: var(--muted); }
 .live-status[data-state="live"]::before { background: var(--red); }
